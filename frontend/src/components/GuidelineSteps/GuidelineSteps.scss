@@ -1,0 +1,21 @@
+.guideline-steps {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__step {
+    margin-right: 20px;
+  }
+
+  &__step-link {
+    display: flex;
+  }
+
+  &__step-number {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-right: 8px;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
+import "./UserForm.scss";
 
 const UserForm = () => {
   const options = {
@@ -9,7 +10,7 @@ const UserForm = () => {
     ]
   };
   return (
-    <Form>
+    <Form className="user-form">
       <Form.Group widths="equal">
         <Form.Select
           fluid
@@ -38,9 +39,7 @@ const UserForm = () => {
         placeholder="Сопутствующие заболевания/аллергия"
       />
       <Form.Input fluid label="Давление" placeholder="Давление" />
-      <button type="submit" className="ui button">
-        Submit
-      </button>
+      <Form.Button>Submit</Form.Button>
     </Form>
   );
 };
