@@ -23,14 +23,14 @@ const App = () => {
       <div className="container">
         <div className="content">
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
             <Route path="/user">
               <User />
             </Route>
             <Route path="/user/:userId/guideline">
               <UserGuideline />
+            </Route>
+            <Route exact path="/">
+              <Home />
             </Route>
           </Switch>
         </div>

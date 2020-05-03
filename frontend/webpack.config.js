@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const paths = require("./paths");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -73,7 +74,12 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: [".js", ".jsx", ".sass", ".css", ".svg", '.jpeg', '.jpg']
+    extensions: [".js", ".jsx", ".sass", ".css", ".svg", ".jpeg", ".jpg"],
+    modules: [paths.appSrc, "node_modules"],
+    alias: {
+      components: path.resolve(paths.appSrc, "components"),
+      pages: path.resolve(paths.appSrc, "pages")
+    }
   },
   devServer: {
     historyApiFallback: true,
