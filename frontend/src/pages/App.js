@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import Home from "./Home";
 import User from "./User";
-import UserGuideline from "./UserGuideline";
 import "./App.scss";
 
 const App = () => {
@@ -23,15 +22,8 @@ const App = () => {
       <div className="container">
         <div className="content">
           <Switch>
-            <Route path="/user">
-              <User />
-            </Route>
-            <Route path="/user/:userId/guideline">
-              <UserGuideline />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <Route path="/user" render={() => <User />} />
+            <Route exact path="/" render={() => <Home />} />
           </Switch>
         </div>
       </div>

@@ -1,0 +1,10 @@
+.user-guideline-chart {
+  position: relative;
+  border: 1px solid #d3d3d3;
+  overflow: hidden;
+
+  &__chart {
+    width: 100%;
+    height: 70vh;
+  }
+}
