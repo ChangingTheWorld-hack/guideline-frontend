@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Home = () => {
-  return <h2>Home page</h2>;
+  return (
+    <Fragment>
+      <h1>Home page</h1>
+      <p>Осмысленный текст с описанием сервиса.</p>
+    </Fragment>
+  );
 };
 
 export default Home;

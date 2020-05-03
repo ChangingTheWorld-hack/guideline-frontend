@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  min-height: 46px;
+  border-bottom: 1px solid #dcdcdc;
+
+  &__nav-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__nav-link {
+    margin-right: 16px;
+  }
+}
+
+.content {
+  padding-top: 32px;
+}

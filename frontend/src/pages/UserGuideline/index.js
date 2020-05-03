@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserGuideline = () => {
-  return <h2>UserGuideline page</h2>;
+  return <h1>UserGuideline page</h1>;
 };
 
 export default UserGuideline;
