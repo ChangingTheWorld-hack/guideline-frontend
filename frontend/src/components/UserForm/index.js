@@ -253,7 +253,7 @@ class UserForm extends PureComponent {
           placeholder="Давление"
           onChange={this.handleChange}
         />
-        <Form.Button color="green">Submit</Form.Button>
+        <Form.Button color="green">Отправить</Form.Button>
       </Form>
     );
   }
