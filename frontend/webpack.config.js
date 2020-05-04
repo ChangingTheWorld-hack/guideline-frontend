@@ -83,9 +83,10 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    disableHostCheck: true,
     hot: true,
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 3000
+    port: process.env.PORT || 3000
   }
 };

@@ -4,6 +4,6 @@ WORKDIR /var/www/frontend
 COPY . /var/www/frontend
 RUN yarn install && yarn build
 
-EXPOSE 3000
+EXPOSE $PORT
 
 CMD ["yarn", "dev"]
