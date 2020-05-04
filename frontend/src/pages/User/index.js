@@ -9,7 +9,7 @@ const User = () => {
     <Fragment>
       <div className="content">
         <div className="container">
-          <h1>Рекомендация по лечению</h1>
+          <h1>Рекомендация к лечению</h1>
           <GuidelineSteps />
           <Switch>
             <Route

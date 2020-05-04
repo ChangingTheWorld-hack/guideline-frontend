@@ -16,7 +16,7 @@ export default class AppModel {
         cancelToken: token
       })
       .then(({ data }) => ({
-        persons: _get(data, "persons", [])
+        users: _get(data, "_embedded.persons", [])
       }));
   }
 

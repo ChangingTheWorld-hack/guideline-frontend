@@ -19,30 +19,46 @@ const modes = [
   }
 ];
 
-const statistics = {
-  users: {
-    labels: ["пользователей", "пользователь", "пользователя", "пользователей"],
-    value: 10,
-    iconUrl: ""
-  },
-  doctors: {
-    labels: ["врачей", "врач", "врача", "врачей"],
-    value: 10,
-    iconUrl: ""
-  },
-  months: {
-    labels: ["месяцев", "месяц", "месяца", "месяцев"],
-    value: 1,
-    iconUrl: ""
-  }
-};
-
 class Home extends PureComponent {
+  state = {
+    statistics: {
+      users: {
+        labels: [
+          "пользователей",
+          "пользователь",
+          "пользователя",
+          "пользователей"
+        ],
+        value: 10,
+        iconUrl: ""
+      },
+      doctors: {
+        labels: ["врачей", "врач", "врача", "врачей"],
+        value: 10,
+        iconUrl: ""
+      },
+      months: {
+        labels: ["месяцев", "месяц", "месяца", "месяцев"],
+        value: 1,
+        iconUrl: ""
+      }
+    }
+  };
+
   componentDidMount() {
-    AppModel.getUsers();
+    const { statistics } = this.state;
+    AppModel.getUsers().then(({ users }) =>
+      this.setState({
+        statistics: {
+          ...statistics,
+          doctors: { ...statistics.doctors, value: users.length }
+        }
+      })
+    );
   }
 
   render() {
+    const { statistics } = this.state;
     return (
       <Fragment>
         <div className="content">
