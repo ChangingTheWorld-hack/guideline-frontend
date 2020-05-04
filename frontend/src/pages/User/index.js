@@ -15,7 +15,6 @@ const User = ({ history }) => {
     });
   };
 
-const User = () => {
   return (
     <Fragment>
       <div className="content">
