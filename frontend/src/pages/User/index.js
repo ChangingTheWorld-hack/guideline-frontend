@@ -22,10 +22,15 @@ const User = ({ history }) => {
           <h1>Консультация к лечению</h1>
           <GuidelineSteps />
           <Route
+            exact
             path="/user/guideline"
             render={() => <UserGuideline guidelineData={guidelineData} />}
           />
-          <Route path="/" render={() => <UserForm onSubmit={onSubmit} />} />
+          <Route
+            exact
+            path="/user"
+            render={() => <UserForm onSubmit={onSubmit} />}
+          />
         </div>
       </div>
     </Fragment>
