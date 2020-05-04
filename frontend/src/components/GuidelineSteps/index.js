@@ -4,7 +4,11 @@ import "./GuidelineSteps.scss";
 
 const steps = [
   { label: "Заполнение формы", url: "/user", stepNumber: 1 },
-  { label: "Просмотр лечения", url: "/user/:userId/guideline", stepNumber: 2 }
+  {
+    label: "Просмотр рекомендаций",
+    url: "/user/:userId/guideline",
+    stepNumber: 2
+  }
 ];
 
 const GuidelineSteps = () => (

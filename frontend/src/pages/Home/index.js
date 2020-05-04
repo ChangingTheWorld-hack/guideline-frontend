@@ -2,6 +2,23 @@ import React, { PureComponent, Fragment } from "react";
 import pluralize from "pluralize-ru";
 import AppModel from "models/AppModel";
 
+const modes = [
+  {
+    modeTitle: "Базовый режим",
+    modeOptions: [
+      { label: "Подготовка отчёта за 5 секунд" },
+      { label: "Без регистрации" }
+    ]
+  },
+  {
+    modeTitle: "Продвинутый режим",
+    modeOptions: [
+      { label: "Визуализация графов лечения" },
+      { label: "Требуется регистрация" }
+    ]
+  }
+];
+
 const statistics = {
   users: {
     labels: ["пользователей", "пользователь", "пользователя", "пользователей"],
@@ -30,10 +47,18 @@ class Home extends PureComponent {
       <Fragment>
         <div className="content">
           <div className="container">
-            <h1>Home page</h1>
+            <h1>Начало работы</h1>
             <div className="row">
               <div className="col-xs-12 col-md-6">
-                <p>Осмысленный текст с описанием сервиса.</p>
+                <p className="home__intro-text">
+                  "Гермес" - онлайн-платформа для оказания медицинских
+                  консультаций для врачей и обычных пользователей.
+                </p>
+                <p className="home__intro-text">
+                  В основе онлайн-платформы используются руководства по лечению
+                  болезней, основанные на статьях медицинских журналов и научных
+                  конференций.
+                </p>
               </div>
               <div className="col-xs-12 col-md-6">
                 <div className="home__intro-video-block">
@@ -48,7 +73,31 @@ class Home extends PureComponent {
               </div>
             </div>
           </div>
-
+          <div className="home__modes">
+            <div className="container">
+              <div className="row">
+                {modes.map(({ modeTitle, modeOptions }, index) => (
+                  <div key={index} className="col-xs-12 col-md-6">
+                    <div className="home__mode">
+                      <div className="home__mode-card">
+                        <div className="home__mode-title">{modeTitle}</div>
+                        <div className="home__mode-card-body">
+                          {modeOptions.map(({ label }, optionId) => (
+                            <div
+                              key={optionId}
+                              className="home__mode-card-item"
+                            >
+                              {label}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="home__statistics-block">
             <div className="container">
               <div className="row">
