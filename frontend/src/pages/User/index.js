@@ -9,7 +9,7 @@ const User = () => {
     <Fragment>
       <div className="content">
         <div className="container">
-          <h1>Рекомендация к лечению</h1>
+          <h1>Консультация к лечению</h1>
           <GuidelineSteps />
           <Switch>
             <Route
@@ -17,7 +17,10 @@ const User = () => {
               path="/user/guideline"
               render={() => <UserGuideline />}
             />
-            <Route path="/" render={() => <UserForm />} />
+            <Route
+              path="/"
+              render={({ history }) => <UserForm history={history} />}
+            />
           </Switch>
         </div>
       </div>

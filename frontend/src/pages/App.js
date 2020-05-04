@@ -30,7 +30,7 @@ const App = () => {
               Главная
             </NavLink>
             <NavLink className="header__nav-link" to="/user">
-              Рекомендация
+              Консультация
             </NavLink>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { Form } from "semantic-ui-react";
+import AppModel from "models/AppModel";
 import "./UserForm.scss";
 
 const options = {
@@ -104,7 +105,12 @@ class UserForm extends PureComponent {
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
-  onSubmit = () => {};
+  onSubmit = () => {
+    const { history } = this.props;
+    new AppModel({ data: this.state }).createRequest().then(data => {
+      history.push("/user/guideline");
+    });
+  };
 
   render() {
     return (
