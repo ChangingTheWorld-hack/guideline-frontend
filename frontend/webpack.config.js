@@ -78,6 +78,7 @@ module.exports = {
     modules: [paths.appSrc, "node_modules"],
     alias: {
       components: path.resolve(paths.appSrc, "components"),
+      models: path.resolve(paths.appSrc, "models"),
       pages: path.resolve(paths.appSrc, "pages")
     }
   },

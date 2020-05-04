@@ -35,12 +35,10 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="content">
-        <Switch>
-          <Route path="/user" render={() => <User />} />
-          <Route path="/" render={() => <Home />} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/user" render={() => <User />} />
+        <Route path="/" render={() => <Home />} />
+      </Switch>
     </Fragment>
   );
 };
