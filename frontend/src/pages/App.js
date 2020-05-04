@@ -36,7 +36,10 @@ const App = () => {
         </div>
       </div>
       <Switch>
-        <Route path="/user" render={() => <User />} />
+        <Route
+          path="/user"
+          render={({ history }) => <User history={history} />}
+        />
         <Route path="/" render={() => <Home />} />
       </Switch>
     </Fragment>

@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import { Form } from "semantic-ui-react";
-import AppModel from "models/AppModel";
 import "./UserForm.scss";
 
 const options = {
@@ -85,17 +84,17 @@ const options = {
     {
       key: "low-pressure",
       text: "< 90/60",
-      value: "low-pressure"
+      value: "LOW"
     },
     {
       key: "normal-pressure",
       text: "90/60 - 120/80",
-      value: "normal-pressure"
+      value: "MEDIUM"
     },
     {
       key: "high-pressure",
       text: "> 120/80",
-      value: "high-pressure"
+      value: "HIGH"
     }
   ]
 };
@@ -105,12 +104,7 @@ class UserForm extends PureComponent {
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
-  onSubmit = () => {
-    const { history } = this.props;
-    new AppModel({ data: this.state }).createRequest().then(data => {
-      history.push("/user/guideline");
-    });
-  };
+  onSubmit = () => this.props.onSubmit(this.state);
 
   render() {
     return (

@@ -22,7 +22,8 @@ export default class AppModel {
 
   createRequest = () => {
     return axios.put(
-      "https://guideline-backend.herokuapp.com/profile",
+    return axios.post(
+      "https://guideline-backend.herokuapp.com/consultation",
       this.data
     );
   };

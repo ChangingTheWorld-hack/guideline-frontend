@@ -5,7 +5,7 @@ import "./GuidelineSteps.scss";
 const steps = [
   { label: "Заполнение формы", url: "/user", stepNumber: 1 },
   {
-    label: "Просмотр рекомендаций",
+    label: "Просмотр отчёта",
     url: "/user/guideline",
     stepNumber: 2
   }

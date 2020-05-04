@@ -35,15 +35,28 @@ class UserGuideline extends PureComponent {
         <div className="user-guideline__details">
           <h3>{reports[0].label}</h3>
           <p>{reports[0].description}</p>
-          <p>
-            Симптомы:
-            <ul>
-              {reports[0].symptoms.map((symptom, index) => (
-                <li key={index}>{symptom}</li>
-              ))}
-            </ul>
-          </p>
-          <p>К какому врачу обратиться: {reports[0].doctors.join(", ")}</p>
+          <div className="user-guideline__doctor-block">
+            <img
+              src="https://image.flaticon.com/icons/svg/1021/1021799.svg"
+              width="42"
+              className="user-guideline__doctor-icon"
+              alt="Доктор"
+            />
+            <div>
+              <div className="user-guideline__doctor-title">
+                К какому врачу обратиться:
+              </div>
+              <div className="user-guideline__doctor-text">
+                {reports[0].doctors.join(", ")}
+              </div>
+            </div>
+          </div>
+          <p>Симптомы:</p>
+          <ul>
+            {reports[0].symptoms.map((symptom, index) => (
+              <li key={index}>{symptom}</li>
+            ))}
+          </ul>
         </div>
       </div>
     );

@@ -5,4 +5,23 @@
     padding-top: 20px;
     padding-bottom: 24px;
   }
+
+  &__doctor-block {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &__doctor-icon {
+    margin-right: 16px;
+  }
+
+  &__doctor-title {
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+
+  &__doctor-text {
+    font-size: 18px;
+  }
 }
