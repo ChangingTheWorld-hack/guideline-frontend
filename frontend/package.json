@@ -33,6 +33,7 @@
     "flexboxgrid2": "^7.2.1",
     "lodash": "^4.17.15",
     "nanoid": "^2.1.7",
+    "pluralize-ru": "^1.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router": "^5.1.2",

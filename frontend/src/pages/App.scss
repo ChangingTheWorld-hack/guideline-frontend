@@ -1,7 +1,10 @@
+@import "../style.sass";
+
 .header {
   display: flex;
-  min-height: 46px;
-  border-bottom: 1px solid #dcdcdc;
+  height: 80px;
+  box-sizing: border-box;
+  background: $main-theme-color;
 
   &__nav-group {
     display: flex;
@@ -10,10 +13,59 @@
   }
 
   &__nav-link {
-    margin-right: 16px;
+    position: relative;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 80px;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:focus {
+      border-bottom-color: rgba(#fff, 0.5);
+      outline: none;
+    }
+
+    &.active::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-bottom: 3px solid #fff;
+    }
   }
 }
 
 .content {
   padding-top: 32px;
+  height: calc(100vh - 80px);
+  background: #f9f9f9;
+}
+
+.home {
+  &__statistics-block {
+    background: #f9f9f9;
+  }
+
+  &__statistics-item {
+    margin: 7px 4px;
+    padding: 16px 4px;
+    text-align: center;
+  }
+
+  &__statistics-number {
+    font-size: 32px;
+  }
+
+  &__statistics-text {
+    font-size: 20px;
+    margin-top: 12px;
+  }
 }

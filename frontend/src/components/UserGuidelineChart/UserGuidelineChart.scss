@@ -1,10 +1,11 @@
 .user-guideline-chart {
+  width: 70%;
   position: relative;
+  background: #fff;
   border: 1px solid #d3d3d3;
   overflow: hidden;
 
   &__chart {
-    width: 100%;
-    height: 70vh;
+    height: 50vh;
   }
 }

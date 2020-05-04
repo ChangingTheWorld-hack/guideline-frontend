@@ -1,6 +1,7 @@
 export const cytoscapeConfig = {
   boxSelectionEnabled: false,
   autounselectify: true,
+  autoungrabify: true,
 
   style: [
     {

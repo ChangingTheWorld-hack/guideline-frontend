@@ -7,16 +7,22 @@ import UserForm from "components/UserForm";
 const User = () => {
   return (
     <Fragment>
-      <h1>Руководство по лечению</h1>
-      <GuidelineSteps />
-      <Switch>
-        <Route
-          exact
-          path="/user/:userId/guideline"
-          render={() => <UserGuideline />}
-        />
-        <Route path="/" render={() => <UserForm />} />
-      </Switch>
+      <div className="container">
+        <h1>Рекомендация по лечению</h1>
+        <GuidelineSteps />
+        <Switch>
+          <Route
+            exact
+            path="/user/:userId/guideline"
+            render={({
+              match: {
+                params: { userId }
+              }
+            }) => <UserGuideline userId={userId} />}
+          />
+          <Route path="/" render={() => <UserForm />} />
+        </Switch>
+      </div>
     </Fragment>
   );
 };
