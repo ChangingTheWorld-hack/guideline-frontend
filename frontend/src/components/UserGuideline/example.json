@@ -3,38 +3,8 @@
   "nodes": [
     {
       "data": {
-        "id": "a8cb894c-249e-459c-baeb-792a54da44d7",
-        "label": "nodea8cb894c-249e-459c-baeb-792a54da44d7"
-      },
-      "position": {
-        "x": 578.5,
-        "y": 288
-      }
-    },
-    {
-      "data": {
-        "id": "2d8e9708-bf3b-4235-93ef-1048c6017651",
-        "label": "node2d8e9708-bf3b-4235-93ef-1048c6017651"
-      },
-      "position": {
-        "x": 795.5,
-        "y": 309
-      }
-    },
-    {
-      "data": {
-        "id": "240009ab-0f2d-423a-8486-78a5c69cc5bc",
-        "label": "node240009ab-0f2d-423a-8486-78a5c69cc5bc"
-      },
-      "position": {
-        "x": 793.5,
-        "y": 92
-      }
-    },
-    {
-      "data": {
         "id": "355752b6-c5a7-4e5c-9f62-e8a9cc59fa20",
-        "label": "node355752b6-c5a7-4e5c-9f62-e8a9cc59fa20"
+        "label": "Головные боли"
       },
       "position": {
         "x": 574.5,
@@ -44,7 +14,7 @@
     {
       "data": {
         "id": "c27429bf-1d90-4288-b9a4-02c87156bb4b",
-        "label": "nodec27429bf-1d90-4288-b9a4-02c87156bb4b"
+        "label": "Паническая атака"
       },
       "position": {
         "x": 795.5,
@@ -53,18 +23,8 @@
     },
     {
       "data": {
-        "id": "d597c9b7-4bf1-4e59-b317-4cbdec6e6140",
-        "label": "noded597c9b7-4bf1-4e59-b317-4cbdec6e6140"
-      },
-      "position": {
-        "x": 575.5,
-        "y": 124
-      }
-    },
-    {
-      "data": {
         "id": "cc02cad3-06f6-46be-8868-069ecdada72b",
-        "label": "nodecc02cad3-06f6-46be-8868-069ecdada72b"
+        "label": ""
       },
       "position": {
         "x": 381.5,
@@ -76,18 +36,6 @@
     {
       "data": {
         "source": "cc02cad3-06f6-46be-8868-069ecdada72b",
-        "target": "a8cb894c-249e-459c-baeb-792a54da44d7"
-      }
-    },
-    {
-      "data": {
-        "source": "a8cb894c-249e-459c-baeb-792a54da44d7",
-        "target": "2d8e9708-bf3b-4235-93ef-1048c6017651"
-      }
-    },
-    {
-      "data": {
-        "source": "cc02cad3-06f6-46be-8868-069ecdada72b",
         "target": "355752b6-c5a7-4e5c-9f62-e8a9cc59fa20"
       }
     },
@@ -95,18 +43,6 @@
       "data": {
         "source": "355752b6-c5a7-4e5c-9f62-e8a9cc59fa20",
         "target": "c27429bf-1d90-4288-b9a4-02c87156bb4b"
-      }
-    },
-    {
-      "data": {
-        "source": "cc02cad3-06f6-46be-8868-069ecdada72b",
-        "target": "d597c9b7-4bf1-4e59-b317-4cbdec6e6140"
-      }
-    },
-    {
-      "data": {
-        "source": "d597c9b7-4bf1-4e59-b317-4cbdec6e6140",
-        "target": "240009ab-0f2d-423a-8486-78a5c69cc5bc"
       }
     }
   ]

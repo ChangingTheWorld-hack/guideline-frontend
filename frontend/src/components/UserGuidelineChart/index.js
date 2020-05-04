@@ -21,7 +21,7 @@ const getCytoscape = (container, initialElements) =>
 
 class UserGuidelineChart extends PureComponent {
   state = {
-    zoom: 1
+    zoom: 1.4
   };
 
   chart = React.createRef();

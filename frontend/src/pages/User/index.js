@@ -14,12 +14,8 @@ const User = () => {
           <Switch>
             <Route
               exact
-              path="/user/:userId/guideline"
-              render={({
-                match: {
-                  params: { userId }
-                }
-              }) => <UserGuideline userId={userId} />}
+              path="/user/guideline"
+              render={() => <UserGuideline />}
             />
             <Route path="/" render={() => <UserForm />} />
           </Switch>

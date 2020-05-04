@@ -141,13 +141,13 @@ const UserForm = () => {
       <Form.Select
         fluid
         options={options.pressure}
-        label="Текущее давление (мм. рт. столба)"
+        label="Текущее артериальное давление (мм. рт. столба)"
         placeholder="Давление"
       />
       <Form.Select
         fluid
         options={options.pressure}
-        label="Давление в обычном состоянии (мм. рт. столба)"
+        label="Артериальное давление в обычном состоянии (мм. рт. столба)"
         placeholder="Давление"
       />
       <Form.Button>Submit</Form.Button>

@@ -6,7 +6,7 @@ const steps = [
   { label: "Заполнение формы", url: "/user", stepNumber: 1 },
   {
     label: "Просмотр рекомендаций",
-    url: "/user/:userId/guideline",
+    url: "/user/guideline",
     stepNumber: 2
   }
 ];
