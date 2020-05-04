@@ -1,20 +1,15 @@
 import React, { PureComponent } from "react";
 import { Form } from "semantic-ui-react";
+import _isEqual from "lodash/isEqual";
 import "./UserForm.scss";
 
 const options = {
   sex: [
-    { key: "m", text: "Мужской", value: "male" },
-    { key: "f", text: "Женский", value: "female" }
+    { key: "m", text: "Мужской", value: "MAN" },
+    { key: "f", text: "Женский", value: "WOMAN" }
   ],
   symptoms: [
-    { key: "pryschi-child", text: "Прыщи", value: "pryschi-child" },
-    {
-      key: "rvota-ponos-child",
-      text: "Рвота,понос",
-      value: "rvota-ponos-child"
-    },
-    { key: "zapor-child", text: "Запор", value: "zapor-child" },
+    { key: "psychical", text: "Психическое", value: "Психическое" },
     {
       key: "ukusy-nasekomyh-child",
       text: "Укусы насекомых",
@@ -33,11 +28,6 @@ const options = {
     { key: "ekzema-child", text: "Экзема", value: "ekzema-child" },
     { key: "vetryanka-child", text: "Ветрянка", value: "vetryanka-child" },
     {
-      key: "drugieobrashenia",
-      text: "Другие обращения",
-      value: "drugieobrashenia"
-    },
-    {
       key: "nederzhanie-mochi-child",
       text: "Недержание мочи",
       value: "nederzhanie-mochi-child"
@@ -46,21 +36,90 @@ const options = {
       key: "narusheniya-sna-child",
       text: "Нарушения сна",
       value: "narusheniya-sna-child"
+    }
+  ],
+  painLevel: [
+    {
+      key: "0",
+      text: "0 – полное отсутствие боли.",
+      value: "0"
     },
     {
-      key: "grudnoe-vskarmlivanie-child",
-      text: "Грудное вскармливание",
-      value: "grudnoe-vskarmlivanie-child"
+      key: "1",
+      text:
+        "1 - боль очень слабая, едва заметная. Большую часть времени о ней не думается.",
+      value: "1"
     },
     {
-      key: "atopicheskiy-dermatit-child",
-      text: "Атопический дерматит",
-      value: "atopicheskiy-dermatit-child"
+      key: "2",
+      text:
+        "2 – несильная боль. Она может раздражать и время от времени приступообразно усиливаться.",
+      value: "2"
     },
     {
-      key: "pitanie-detey",
-      text: "Питание детей раннего возраста",
-      value: "pitanie-detey"
+      key: "3",
+      text:
+        "3 – боль заметна, она отвлекает, однако к ней можно привыкнуть и приспособиться.",
+      value: "3"
+    },
+    {
+      key: "4",
+      text:
+        "4 – умеренная боль. Если человек глубоко погружен в какое-то занятие, он может игнорировать ее, но только в течение какого-то времени, однако затем она обязательно отвлечет внимание на себя.",
+      value: "4"
+    },
+    {
+      key: "5",
+      text:
+        "5 – умеренно сильная боль. Ее нельзя игнорировать больше, чем несколько минут, но сделав над собой усилие, человек может выполнять какую-то работу или участвовать в каком-то мероприятии.",
+      value: "5"
+    },
+    {
+      key: "6",
+      text:
+        "6 – умеренно сильная боль, которая мешает выполнять нормальные ежедневные действия, так как сосредоточение на чем-то становится чрезвычайно сложной задачей.",
+      value: "6"
+    },
+    {
+      key: "7",
+      text:
+        "7 – тяжелая боль, подчиняющая себе все ощущения и существенно ограничивающая способность человека производить обычные действия и общаться с другими. Мешает спать.",
+      value: "7"
+    },
+    {
+      key: "8",
+      text:
+        "8 – интенсивная боль. Физическая активность сильно ограничена. Словесное общение требует огромного усилия.",
+      value: "8"
+    },
+    {
+      key: "9",
+      text:
+        "9 – мучительная боль. Человек не в состоянии разговаривать. Возможны неконтролируемые стоны или плач.",
+      value: "9"
+    },
+    {
+      key: "10",
+      text:
+        "10 – невыносимая боль. Человек привязан к постели и, возможно, в бреду. Болевые ощущения такой силы приходится испытывать в течение жизни очень малому количеству людей.",
+      value: "10"
+    }
+  ],
+  painDuration: [
+    {
+      key: "minutes",
+      text: "минуты",
+      value: "minutes"
+    },
+    {
+      key: "hours",
+      text: "часы",
+      value: "hours"
+    },
+    {
+      key: "days",
+      text: "дни",
+      value: "days"
     }
   ],
   diseases: [
@@ -102,7 +161,15 @@ const options = {
 class UserForm extends PureComponent {
   state = {};
 
-  handleChange = (e, { name, value }) => this.setState({ [name]: value });
+  handleChange = (e, { name, value }) => {
+    if (name === "malaiseType" && !_isEqual(value, ["Психическое"])) {
+      return alert(
+        "Извините, доступны для отображения только психические заболевания."
+      );
+    } else {
+      this.setState({ [name]: value });
+    }
+  };
 
   onSubmit = () => this.props.onSubmit(this.state);
 
@@ -124,6 +191,8 @@ class UserForm extends PureComponent {
             label="Возраст"
             placeholder="Возраст"
             onChange={this.handleChange}
+            type="number"
+            min={1}
           />
         </Form.Group>
         <Form.Dropdown
@@ -139,15 +208,17 @@ class UserForm extends PureComponent {
           onChange={this.handleChange}
         />
         <Form.Group widths="equal">
-          <Form.Input
+          <Form.Select
             fluid
+            options={options.painLevel}
             name="painLevel"
             label="Степень боли"
             placeholder="Степень боли"
             onChange={this.handleChange}
           />
-          <Form.Input
+          <Form.Select
             fluid
+            options={options.painDuration}
             name="painDuration"
             label="Продолжительность боли"
             placeholder="Продолжительность боли"
@@ -182,7 +253,7 @@ class UserForm extends PureComponent {
           placeholder="Давление"
           onChange={this.handleChange}
         />
-        <Form.Button>Submit</Form.Button>
+        <Form.Button color="green">Submit</Form.Button>
       </Form>
     );
   }

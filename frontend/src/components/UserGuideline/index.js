@@ -28,9 +28,14 @@ class UserGuideline extends PureComponent {
   };
 
   render() {
+    const { guidelineData } = this.props;
+    const { guideline, ...report } = guidelineData;
     const { reports } = this.state;
+    if (!guidelineData.id)
+      return <h2>Data not found. Please return and fill form fields again.</h2>;
     return (
       <div className="user-guideline">
+        <h2>Возможные заболевания</h2>
         <UserGuidelineChart data={data} />
         <div className="user-guideline__details">
           <h3>{reports[0].label}</h3>

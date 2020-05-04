@@ -12,8 +12,8 @@ const steps = [
 
 const GuidelineSteps = () => (
   <ul className="guideline-steps">
-    {steps.map(({ stepNumber, label, url }) => (
-      <li key={stepNumber} className="guideline-steps__step">
+    {steps.map(({ label, url }, index) => (
+      <li key={index} className="guideline-steps__step">
         <NavLink to={url} className="guideline-steps__step-link">
           {label}
         </NavLink>
