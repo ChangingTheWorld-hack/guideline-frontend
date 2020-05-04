@@ -7,18 +7,25 @@
 
   &__step {
     margin-right: 20px;
+
+    &:last-child .guideline-steps__step-link::after {
+      display: none;
+    }
   }
 
   &__step-link {
-    display: flex;
+    position: relative;
+    margin-right: 4px;
     font-size: 16px;
     color: #54be73;
-  }
 
-  &__step-number {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    margin-right: 8px;
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      content: ">";
+      margin-left: 8px;
+      transform: translate(0, -50%);
+    }
   }
 }

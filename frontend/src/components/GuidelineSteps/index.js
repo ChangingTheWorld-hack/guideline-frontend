@@ -3,11 +3,10 @@ import { NavLink } from "react-router-dom";
 import "./GuidelineSteps.scss";
 
 const steps = [
-  { label: "Заполнение формы", url: "/user", stepNumber: 1 },
+  { label: "Заполнение формы", url: "/user" },
   {
     label: "Просмотр отчёта",
-    url: "/user/guideline",
-    stepNumber: 2
+    url: "/user/guideline"
   }
 ];
 
@@ -16,7 +15,6 @@ const GuidelineSteps = () => (
     {steps.map(({ stepNumber, label, url }) => (
       <li key={stepNumber} className="guideline-steps__step">
         <NavLink to={url} className="guideline-steps__step-link">
-          <div className="guideline-steps__step-number">{stepNumber}</div>
           {label}
         </NavLink>
       </li>
