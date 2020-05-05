@@ -80,7 +80,7 @@ class Home extends PureComponent {
                 <div className="home__intro-video-block">
                   <iframe
                     className="home__intro-video"
-                    src="https://www.youtube.com/embed/ZGGDKC3GlrI"
+                    src="https://www.youtube.com/embed/NbLH_HSfhTU"
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
